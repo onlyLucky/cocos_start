@@ -1,0 +1,8 @@
+{
+  "engine": "cocos-creator-js",
+  "packages": "packages",
+  "name": "basic_airplane",
+  "id": "7a20565d-92df-41c3-b10a-df6eece93ef8",
+  "version": "2.4.0",
+  "isNew": false
+}
