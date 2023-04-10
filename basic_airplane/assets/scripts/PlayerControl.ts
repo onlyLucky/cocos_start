@@ -23,7 +23,14 @@ export default class PlayerControl extends cc.Component {
 			bullet.x = this.node.x;
 			bullet.y = this.node.y + 60;
 		}, 0.5);
+		// 开启碰撞检测
+		console.log('开启碰撞检测')
+		cc.director.getCollisionManager().enabled = true;
 	}
 
-	update(dt) { }
+	update(dt) {
+	}
+	onCollisionEnter(other) {
+		console.log(other, 'other')
+	}
 }
