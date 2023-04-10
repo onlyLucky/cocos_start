@@ -1,28 +1,23 @@
-// Learn TypeScript:
-//  - https://docs.cocos.com/creator/manual/en/scripting/typescript.html
-// Learn Attribute:
-//  - https://docs.cocos.com/creator/manual/en/scripting/reference/attributes.html
-// Learn life-cycle callbacks:
-//  - https://docs.cocos.com/creator/manual/en/scripting/life-cycle-callbacks.html
 
-const {ccclass, property} = cc._decorator;
+const { ccclass, property } = cc._decorator;
 
 @ccclass
-export default class NewClass extends cc.Component {
+export default class BulletControl extends cc.Component {
 
-    @property(cc.Label)
-    label: cc.Label = null;
+	@property(cc.Label)
+	speed: number = 800;
 
-    @property
-    text: string = 'hello';
 
-    // LIFE-CYCLE CALLBACKS:
+	start() {
 
-    // onLoad () {}
+	}
 
-    start () {
-
-    }
-
-    // update (dt) {}
+	update(dt) {
+		// 移动
+		this.node.y += this.speed * dt;
+		// 出屏幕销毁
+		if (this.node.y > 820) {
+			this.node.destroy();
+		}
+	}
 }
